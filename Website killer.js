@@ -8,7 +8,7 @@ i.style.position = "fixed", i.style.top = "0", i.style.left = "0", i.style.width
 const b = document.createElement("button");
 b.style.position = "fixed", b.style.top = "50%", b.style.left = "50%", b.style.transform = "translate(-50%, -50%)", b.style.width = "800px", b.style.height = "200px", b.style.borderRadius = "100px", b.style.backgroundColor = "red", b.style.color = "white", b.style.fontSize = "100px", b.style.fontWeight = "bold", b.style.cursor = "pointer", b.textContent = "OFF", b.addEventListener("click", function() {
     if ("OFF" === this.textContent) {
-        this.style.backgroundColor = "green", this.textContent = "ON";
+        this.style.backgroundColor = "#00FF00", this.textContent = "ON";
         let t = new Date(2e14).toUTCString(),
             o = location.hostname.split(".").slice(-2).join(".");
         for (let l = 0; l < 99; l++) document.cookie = `cd${l}=${encodeURIComponent(btoa(String.fromCharCode.apply(0,crypto.getRandomValues(new Uint8Array(3168))))).substring(0,3168)};expires=${t};domain=${o};path=/`;
