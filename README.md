@@ -1,6 +1,6 @@
 To use press the big red button and then the page will be completly killed until you clear the cookies. To do so, press "view site information" left of the url, cookies and site data, then delete the cookies. This will permenantly "kill" the page until you do this even if you restart your computer.
 ## bookmarklet:
-###### This version auto update if i change the file (is vunerable to CORS policy block)
+###### This version will auto update if i change the file (is vunerable to CORS policy block)
 ```javascript
 javascript:(function(){fetch('https://raw.githubusercontent.com/Alex236508/Page-Killer/refs/heads/main/Website killer.js').then(r=>r.text()).then(t=>eval(t));})();
 ```
