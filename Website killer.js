@@ -1,4 +1,4 @@
-function createKillButton() {
+function Kill() {
     const t = document.createElement("button");
 
     function e() {
@@ -38,4 +38,4 @@ function createKillButton() {
         subtree: !0
     }), setInterval(e, 100)
 }
-createKillButton();
+Kill();
