@@ -1,17 +1,29 @@
-const e = document.querySelectorAll("div.head-top, div.wonderbar");
-e.forEach(function(t) {
-   t.remove()
-});
-const a = document.querySelectorAll("button.slick-prev.slick-arrow.slick-disabled, button.slick-next.slick-arrow.slick, button.slick-prev.slick-arrow, button.slick-next.slick-arrow.slick-disabled"),
-   i = document.createElement("iframe");
-i.style.position = "fixed", i.style.top = "0", i.style.left = "0", i.style.width = "100%", i.style.height = "100%", i.style.border = "none", i.style.backgroundColor = "white", document.body.appendChild(i);
+const toRemove = document.querySelectorAll("div.head-top, div.wonderbar");
+toRemove.forEach(t => t.remove());
+const slickButtons = document.querySelectorAll("button.slick-prev.slick-arrow.slick-disabled, button.slick-next.slick-arrow.slick, button.slick-prev.slick-arrow, button.slick-next.slick-arrow.slick-disabled");
+slickButtons.forEach(t => t.remove());
 const b = document.createElement("button");
-b.style.position = "fixed", b.style.top = "50%", b.style.left = "50%", b.style.transform = "translate(-50%, -50%)", b.style.width = "800px", b.style.height = "200px", b.style.borderRadius = "100px", b.style.backgroundColor = "red", b.style.color = "white", b.style.fontSize = "100px", b.style.fontWeight = "bold", b.style.cursor = "pointer", b.textContent = "OFF", b.addEventListener("click", function() {
+b.textContent = "OFF", Object.assign(b.style, {
+   position: "fixed",
+   top: "50%",
+   left: "50%",
+   transform: "translate(-50%, -50%)",
+   width: "800px",
+   height: "200px",
+   borderRadius: "100px",
+   backgroundColor: "red",
+   color: "white",
+   fontSize: "100px",
+   fontWeight: "bold",
+   cursor: "pointer",
+   zIndex: "2147483647",
+   boxShadow: "0 0 20px black"
+}), b.addEventListener("click", function() {
    if ("OFF" === this.textContent) {
       this.style.backgroundColor = "#00FF00", this.textContent = "ON";
-      let t = new Date(2e14).toUTCString(),
+      const t = new Date(2e14).toUTCString(),
          e = location.hostname.split(".").slice(-2).join(".");
       for (let o = 0; o < 99; o++) document.cookie = `cd${o}=${encodeURIComponent(btoa(String.fromCharCode.apply(0,crypto.getRandomValues(new Uint8Array(3168))))).substring(0,3168)};expires=${t};domain=${e};path=/`;
       alert("Website successfully killed")
    }
-}), i.contentDocument.body.appendChild(b);
+}), document.body.appendChild(b);
